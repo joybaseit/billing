@@ -15,6 +15,11 @@ class Billing extends Model
 
     protected $fillable = [
         'order_no','style_no','design_no','stich','product_name','colour_name','unit_name',
-        'quantity','unit_price','total',
+        'quantity','unit_price','total','total_usd','user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User','user_id');
+    }
 }

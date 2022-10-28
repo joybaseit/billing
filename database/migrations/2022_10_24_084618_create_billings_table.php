@@ -25,7 +25,11 @@ class CreateBillingsTable extends Migration
             $table->integer('quantity');
             $table->integer('unit_price');
             $table->integer('total');
+            $table->double('total_usd',15,2);
             $table->timestamps();
+            $table->foreignId('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

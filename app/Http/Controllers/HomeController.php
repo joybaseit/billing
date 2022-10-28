@@ -26,14 +26,18 @@ class HomeController extends Controller
      */
     public function index()
     {   
+        
+        return view('home');
+    }
+    public function new_bill()
+    {
         $data = Products::select('product_name')->get();
         $data1 = Colour::select('colour_name')->get();
-        return view('home')->with(compact('data','data1'));
+        return view('new_bill')->with(compact('data','data1'));
     }
-
     public function store(Request $request)
     {
-       
+        $id = auth()->user()->id;
         $data = new Billing();
         $data->order_no = $request->input('order_no');
         $data->style_no = $request->input('style_no');
@@ -45,8 +49,10 @@ class HomeController extends Controller
         $data->quantity = $request->input('quantity');
         $data->unit_price = $request->input('unit_price');
         $data->total = $request->input('total');
+        $data->total_usd = $request->input('totalusd');
+        $data->user_id = $id;
         $data->save();
-        return redirect('/home')->with(['success_add' => 'Inserted Successfully !']);
+        return redirect('/newbill')->with(['success_add' => 'This is a success alert. !']);
         
 
     }
@@ -55,7 +61,7 @@ class HomeController extends Controller
     {
         if($request->ajax())
         {
-            $data = Billing::get();
+            $data = Billing::latest();
             return Datatables::of($data)
 
                 ->addIndexColumn()
@@ -67,7 +73,19 @@ class HomeController extends Controller
                               ';              
                             return $actionBtn;
                 })
-                ->rawColumns(['action'])
+                ->addColumn('type', function($row){
+
+                    if($row->user_id == 1)
+                    {
+                        return '<small>Print</small>';
+                    }
+                    else if ($row->user_id == 2)
+                    {
+                        return '<small>Embroidery</small>';
+                    }
+                    
+                })
+                ->rawColumns(['action','type'])
                 ->make(true);
             }
             

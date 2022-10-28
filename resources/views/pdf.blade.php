@@ -11,7 +11,7 @@
   
 * { margin: 0; padding: 0; }
 body { font: 14px/1.4 Georgia, serif; }
-#page-wrap { width: 800px; margin: 0 auto; }
+#page-wrap { width: 100%; margin: 0 auto; }
 
 textarea { border: 0; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
 table { border-collapse: collapse; }
@@ -73,44 +73,6 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 	<div id="page-wrap">
 
 		<textarea id="header"> Billing  </textarea>
-		
-		  <div id="customer" style="float:left; position:relative; right:-15px;">
-
-      <table id="items" style="width:510px;">
-              <thead>
-                <tr>
-                <th> SL </th>
-                <th>order_no</th>
-                <th>style_no</th>
-                <th>design_no</th>
-                <th>stich</th>
-                <th>product_name</th>
-                <th>colour_name</th>
-                <th>unit_name</th>
-                <th>quantity</th>
-                <th>unit_price</th>
-                <th>total in BDT</th>
-                </tr>
-                </thead>
-                                       <tbody>               
-                                           <tr>
-                                               <td>{{$show->id}}</td>
-                                               <td >{{$show->order_no}}</td>
-                                               <td >{{$show->style_no}}</td>
-                                               <td> {{$show->design_no}} </td>
-                                               <td> {{$show->stich}}</td>
-                                               <td>{{$show->product_name}}</td>
-                                               <td> {{$show->colour_name}} </td>
-                                               <td> {{$show->unit_name}}</td>
-                                               <td>{{$show->quantity}}</td>
-                                               <td> {{$show->unit_price}} </td>
-                                               <td> {{$show->total}}</td>
-                                           </tr>
-             
-                                       </tbody>
-	          	</table>
-		
-	    	</div>
       <div id="identity" style = "position:relative; left:-30px;">
               <div id="logo">
                 <img  src="{{ $show->qr_code }}" alt="logo" />
@@ -186,10 +148,17 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 
   <div id="page-wrap">
 
-		<textarea id="header">Sena Edible Oil Industries </textarea>
-		
-		 <div id="customer" style="float:left;position:relative; right:-15px;">
-     <table id="items" style="width:510px;">
+		<textarea id="header"> Billing  </textarea>
+      <div id="identity" style = "position:relative; left:-30px;">
+              <div id="logo">
+                <img  src="{{ $show->qr_code }}" alt="logo" />
+              </div>
+      
+      </div> 
+      <br>
+      <br><br>
+		<table id="items" style="width:750px;position:relative; right:-15px;">
+    <table id="items" style="width:510px;">
               <thead>
                 <tr>
                 <th> SL </th>
@@ -222,51 +191,8 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
              
                                        </tbody>
 	          	</table>
-		  </div>
-		
-          <div id="identity" style = "position:relative; left:-30px;">
-                  <div id="logo">
-                    <img  src="{{ $show->qr_code }}" alt="logo" />
-                  </div>
-          
-          </div>
-          <br>
-      <br><br> 
-      <table id="items" style="width:510px;">
-              <thead>
-                <tr>
-                <th> SL </th>
-                <th>order_no</th>
-                <th>style_no</th>
-                <th>design_no</th>
-                <th>stich</th>
-                <th>product_name</th>
-                <th>colour_name</th>
-                <th>unit_name</th>
-                <th>quantity</th>
-                <th>unit_price</th>
-                <th>total in BDT</th>
-                </tr>
-                </thead>
-                                       <tbody>               
-                                           <tr>
-                                               <td>{{$show->id}}</td>
-                                               <td >{{$show->order_no}}</td>
-                                               <td >{{$show->style_no}}</td>
-                                               <td> {{$show->design_no}} </td>
-                                               <td> {{$show->stich}}</td>
-                                               <td>{{$show->product_name}}</td>
-                                               <td> {{$show->colour_name}} </td>
-                                               <td> {{$show->unit_name}}</td>
-                                               <td>{{$show->quantity}}</td>
-                                               <td> {{$show->unit_price}} </td>
-                                               <td> {{$show->total}}</td>
-                                           </tr>
-             
-                                       </tbody>
-	          	</table>
-		       <br>
-           <div id="identity" style = "float:center; position:relative; right:-15px;">
+              <br>
+              <div id="identity" style = "float:center; position:relative; right:-15px;">
                   <div id="logo">
                   <div style="height: 2px;width:90px;background: black;"></div>
                   <br>
