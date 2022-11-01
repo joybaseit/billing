@@ -15,17 +15,16 @@ class CreateBillingsTable extends Migration
     {
         Schema::create('billings', function (Blueprint $table) {
             $table->id();
+            $table->string('customer_name');
+            $table->string('address');
             $table->string('order_no');
             $table->string('style_no');
             $table->string('design_no');
             $table->integer('stich');
-            $table->string('product_name');
             $table->string('colour_name');
             $table->string('unit_name');
-            $table->integer('quantity');
-            $table->integer('unit_price');
-            $table->integer('total');
-            $table->double('total_usd',15,2);
+            $table->double('total_order',15,2)->nullable();
+            $table->double('total_order_usd',15,2)->nullable();
             $table->timestamps();
             $table->foreignId('user_id');
 

@@ -14,12 +14,12 @@ class Billing extends Model
     protected $table = 'billings';
 
     protected $fillable = [
-        'order_no','style_no','design_no','stich','product_name','colour_name','unit_name',
-        'quantity','unit_price','total','total_usd','user_id',
+        'customer_name','address','order_no','style_no','design_no','stich','colour_name','unit_name',
+        'total_order','total_order_usd','user_id'
     ];
 
     public function user()
     {
-        return $this->belongsTo('App\User','user_id');
+        return $this->belongsTo('App\Models\User','user_id');
     }
 }

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Billing</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <link href="{{ asset('vendor/fontawesome/css/fontawesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/fontawesome/css/solid.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/fontawesome/css/brands.min.css') }}" rel="stylesheet">
