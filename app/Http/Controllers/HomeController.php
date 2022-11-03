@@ -151,7 +151,8 @@ class HomeController extends Controller
 
          
         $show = Billing::where('id',$id)->first();
-        $pdf = PDF::loadView('pdf', compact('show'));
+        $show1 = OrderProducts::where('billings_id',$show->id)->get();
+        $pdf = PDF::loadView('pdf', compact('show','show1'));
         return $pdf->download('bill.pdf');
         
     }
