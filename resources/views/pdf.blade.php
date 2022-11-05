@@ -23,7 +23,7 @@ th {
 <body>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">Customer No:-{{$show->customer_name}}</h5>
+    <h5 class="card-title">Customer Name:-{{$show->customer_name}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Order NO :- {{$show->order_no}}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Address : - {{$show->address}}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Order NO :- {{$show->style_no}}</h6>
