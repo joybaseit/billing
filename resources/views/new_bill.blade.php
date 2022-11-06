@@ -128,7 +128,7 @@
                                                                                                     
                                                                                                     <tr>
                                                                                                         <td colspan="5">
-                                                                                                            Grand Total: $<span id="grandtotal" ></span> <input type="hidden" id="grandtotal"   name="total_order" >
+                                                                                                            Grand Total: <span id="grandtotal" ></span> <input type="hidden" id="grandtotal"   name="total_order" >
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tfoot>
@@ -164,13 +164,13 @@
                                                                                             <tfoot>
                                                                                                 <tr>
                                                                                                     <td colspan="5" style="text-align: center;">
-                                                                                                        <input type="button" id="addrow1" value="Add Product" />
+                                                                                                        <input type="button" id="addrow1" value="&#43" />
                                                                                                     </td>
                                                                                                 </tr>
                                                                                                 
                                                                                                 <tr>
                                                                                                     <td colspan="5">
-                                                                                                        Grand Total: <span id="grandtotal1" ></span> <input type="hidden" id="grandtotal1" value="" name="total_order_usd" >
+                                                                                                        Grand Total: $<span id="grandtotal1" ></span> <input type="hidden" id="grandtotal1" value="" name="total_order_usd" >
                                                                                                     </td>
                                                                                                 </tr>
                                                                                             </tfoot>
